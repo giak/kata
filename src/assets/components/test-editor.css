@@ -1,0 +1,37 @@
+.test-editor {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-gray-700);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: var(--color-gray-900);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Styles spécifiques pour l'éditeur de tests */
+.test-editor .monaco-editor {
+  padding-top: var(--spacing-2);
+  height: 100%;
+}
+
+.test-editor .monaco-editor .margin {
+  background-color: var(--color-gray-900);
+}
+
+.test-editor .monaco-editor .line-numbers {
+  color: var(--color-gray-500);
+}
+
+/* Styles pour les suggestions */
+.test-editor .monaco-editor .suggest-widget {
+  border: 1px solid var(--color-gray-700);
+  background-color: var(--color-gray-800);
+}
+
+.test-editor .monaco-editor .suggest-widget .monaco-list-row.focused {
+  background-color: var(--color-primary-700);
+}

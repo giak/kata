@@ -1,0 +1,78 @@
+.kata-list {
+  padding: 2rem;
+}
+
+.kata-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.kata-list__filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.kata-list__filter {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.kata-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.kata-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.kata-card__meta {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.kata-card__description {
+  margin: 1rem 0;
+  color: #666;
+}
+
+.kata-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.kata-card__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.kata-card__link {
+  color: #666;
+  text-decoration: none;
+}
+
+.kata-card__button {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.kata-card__button:hover {
+  background: var(--primary-hover);
+}

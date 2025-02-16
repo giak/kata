@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "last_updated": "February 16, 2025 at 04:54 AM",
+  "project": {
+    "name": "kata",
+    "version": "1.0.0",
+    "language": "typescript",
+    "framework": "vue",
+    "type": "web application",
+    "description": "This project serves as a framework for managing and solving coding challenges (\"katas\") within a Vue.js web application, providing a structured environment for users to access problem descriptions, implement solutions, and run tests. It leverages Pinia for state management and Vue Router for navigation, with a focus on modular organization of kata implementations, though explicit error handling and performance optimization patterns are not yet prominent. The application aims to offer a user-friendly experience for practicing and improving coding skills through a curated collection of coding exercises."
+  },
+  "ai_behavior": {
+    "code_generation": {
+      "style": {
+        "prefer": [
+          "Consistent use of single quotes for strings.",
+          "Use of `import type` for type imports.",
+          "Explicit type definitions for function parameters and return values.",
+          "Consistent use of arrow functions.",
+          "Use of `async/await` for asynchronous operations.",
+          "Consistent indentation with two spaces.",
+          "Descriptive variable names.",
+          "Line breaks after import statements.",
+          "Blank lines to separate logical code blocks.",
+          "Concise code comments and JSDoc-style documentation.",
+          "Use of enums for representing fixed sets of values.",
+          "Object destructuring for accessing object properties.",
+          "Use of `interface` for defining object types."
+        ],
+        "avoid": [
+          "Double quotes for strings.",
+          "Implicit `any` types.",
+          "Inconsistent indentation.",
+          "Missing type definitions.",
+          "Verbose or overly complex code comments.",
+          "Inconsistent use of arrow functions or function declarations.",
+          "Inconsistent use of async/await"
+        ]
+      },
+      "error_handling": {
+        "prefer": [
+          "Try-catch blocks for handling potential errors in asynchronous operations, especially when fetching external resources.",
+          "Returning descriptive error messages in test failures.",
+          "Using `instanceof Error` to check error types.",
+          "Defaulting to a generic error message ('Unknown error') when the specific error type is unknown."
+        ],
+        "avoid": [
+          "Ignoring potential errors without handling them.",
+          "Throwing generic errors without descriptive messages.",
+          "Using overly complex error handling logic."
+        ]
+      },
+      "performance": {
+        "prefer": [
+          "Lazy loading of modules using dynamic imports (not explicitly seen, but a common pattern).",
+          "Optimizing dependency loading using `optimizeDeps` in `vite.config.ts`.",
+          "Using efficient algorithms for kata solutions."
+        ],
+        "avoid": [
+          "Unnecessary loops or iterations.",
+          "Inefficient data structures.",
+          "Blocking the main thread with long-running operations (use web workers where appropriate)."
+        ],
+        "suggest_patterns": {
+          "improve": [],
+          "avoid": []
+        }
+      },
+      "module_organization": {
+        "structure": [
+          "Core modules: `src/main.ts`, `src/App.vue`, `src/router/index.ts`, `src/stores/kata.store.ts`",
+          "Kata-related modules: `src/katas/`, `src/katas/types/`, `src/katas/implementations/`",
+          "Utility modules: `src/utils/fileLoader.ts`",
+          "Configuration files: `vite.config.ts`, `vitest.config.ts`, `eslint.config.ts`"
+        ],
+        "dependencies": [
+          "`src/main.ts` depends on `src/App.vue`, `src/router/index.ts`, `src/stores/kata.store.ts` (indirectly via `loadKatas`)",
+          "`src/router/index.ts` depends on Vue Router and `src/views/katas/KataListView.vue`, `src/views/katas/KataDetailView.vue`",
+          "`src/katas/loader.ts` depends on `src/stores/kata.store.ts` and specific kata implementations' `metadata.ts` files.",
+          "`src/stores/kata.store.ts` depends on `pinia` and `src/katas/types/kata.types.ts`",
+          "`src/katas/implementations/*/kata.ts` contains the solution and is tested by `src/katas/implementations/*/kata.test.ts`",
+          "`src/katas/implementations/*/kata.test.ts` depends on `src/types/kata.ts` for test result types.",
+          "`src/utils/fileLoader.ts` has no dependencies other than built-in `fetch`."
+        ],
+        "responsibilities": {
+          "src/main.ts": "Application entry point; initializes Vue app, Pinia store, and Vue Router. Loads katas before mounting the app.",
+          "src/router/index.ts": "Configures Vue Router with routes for different views (kata list and kata detail).",
+          "src/katas/loader.ts": "Loads kata metadata and adds them to the Pinia store.",
+          "src/stores/kata.store.ts": "Manages the state of katas, including storing kata metadata and implementations.",
+          "src/katas/implementations/*/kata.ts": "Contains the solution code for a specific kata.",
+          "src/katas/implementations/*/kata.test.ts": "Contains the unit tests for a specific kata solution.",
+          "src/katas/types/kata.types.ts": "Defines the types for kata-related data structures (Kata, KataImplementation, etc.).",
+          "src/utils/fileLoader.ts": "Provides a utility function to load raw file content.",
+          "vite.config.ts": "Configuration for Vite, including plugins, aliases, and server settings.",
+          "vitest.config.ts": "Configuration for Vitest, including environment and exclude patterns.",
+          "eslint.config.ts": "Configuration for ESLint, including plugins, rules, and file patterns."
+        },
+        "rules": [
+          "Each kata implementation has its own directory under `src/katas/implementations/`.",
+          "Each kata implementation directory contains `metadata.ts` (kata metadata), `kata.ts` (solution code), and `kata.test.ts` (unit tests).",
+          "Kata metadata is defined as a constant named `metadata` in `metadata.ts`.",
+          "Kata solutions are defined as a function named `solution` in `kata.ts`.",
+          "Unit tests are defined in `kata.test.ts` using asynchronous functions and descriptive test names.",
+          "Pinia stores are used for managing application state.",
+          "Vue Router is used for navigation between views.",
+          "Configuration files are located in the root directory of the project."
+        ],
+        "naming": {
+          "kata_files": "kata.ts and kata.test.ts",
+          "metadata_files": "metadata.ts",
+          "component_files": "*.vue",
+          "store_files": "*.store.ts",
+          "type_files": "*.types.ts",
+          "test_files": "*.test.ts"
+        }
+      }
+    }
+  }
+}

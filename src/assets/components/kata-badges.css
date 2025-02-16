@@ -1,0 +1,47 @@
+/* Badges Styles */
+.kata-card__difficulty,
+.kata-card__status,
+.kata-card__tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Difficulty badges */
+.kata-card__difficulty.easy {
+  background: #e6ffe6;
+  color: #006600;
+}
+.kata-card__difficulty.medium {
+  background: #fff3e6;
+  color: #cc6600;
+}
+.kata-card__difficulty.hard {
+  background: #ffe6e6;
+  color: #cc0000;
+}
+.kata-card__difficulty.expert {
+  background: #e6e6ff;
+  color: #000066;
+}
+
+/* Status badges */
+.kata-card__status.not_started {
+  background: #f0f0f0;
+  color: #666;
+}
+.kata-card__status.in_progress {
+  background: #e6f3ff;
+  color: #0066cc;
+}
+.kata-card__status.completed {
+  background: #e6ffe6;
+  color: #006600;
+}
+
+/* Tag badges */
+.kata-card__tag {
+  background: #f0f0f0;
+  color: #666;
+}
