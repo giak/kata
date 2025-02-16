@@ -24,7 +24,7 @@ Key Requirements:
 
 ├─ 📄 env.d.ts (1 lines) - TypeScript source file
 ├─ 📄 eslint.config.ts (30 lines) - TypeScript source file
-├─ 📄 vite.config.ts (38 lines) - TypeScript source file
+├─ 📄 vite.config.ts (31 lines) - TypeScript source file
 ├─ 📄 vitest.config.ts (14 lines) - TypeScript source file
 └─ 📁 src
 ├─ 📄 App.vue (19 lines) - Project file
@@ -43,8 +43,8 @@ Key Requirements:
 │ ├─ 📄 base.css (129 lines) - Project file
 │ └─ 📄 variables.css (87 lines) - Project file
 ├─ 📁 components
-│ ├─ 📄 CodeEditor.vue (98 lines) - Project file
-│ └─ 📄 TestEditor.vue (104 lines) - Project file
+│ ├─ 📄 CodeEditor.vue (97 lines) - Project file
+│ └─ 📄 TestEditor.vue (103 lines) - Project file
 ├─ 📁 katas
 │ ├─ 📄 loader.ts (15 lines) - TypeScript source file
 │ ├─ 📁 implementations
@@ -110,7 +110,7 @@ Functions:
 
 - .code-editor
 
-`src/components/CodeEditor.vue` (98 lines)
+`src/components/CodeEditor.vue` (97 lines)
 Functions:
 
 - getWorker
@@ -223,7 +223,7 @@ Functions:
 - .test-editor
 - var
 
-`src/components/TestEditor.vue` (104 lines)
+`src/components/TestEditor.vue` (103 lines)
 Functions:
 
 - getWorker
@@ -236,12 +236,12 @@ Functions:
 
 # 📊 Project Overview
 
-**Files:** 32 | **Lines:** 1,782
+**Files:** 32 | **Lines:** 1,773
 
 ## 📁 File Distribution
 
 - .css: 10 files (872 lines)
-- .ts: 17 files (396 lines)
-- .vue: 5 files (514 lines)
+- .ts: 17 files (389 lines)
+- .vue: 5 files (512 lines)
 
-_Updated: February 16, 2025 at 05:52 AM_
+_Updated: February 16, 2025 at 06:05 AM_

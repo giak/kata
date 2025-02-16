@@ -15,7 +15,7 @@ self.MonacoEnvironment = {
       return new tsWorker()
     }
     return new editorWorker()
-  }
+  },
 }
 
 // Fonction pour nettoyer le code des sourcemaps
@@ -68,8 +68,7 @@ onMounted(() => {
       renderWhitespace: 'selection',
       comments: {
         ignoreEmptyLines: true,
-        removeEmptyLines: true
-      }
+      },
     })
 
     editor.onDidChangeModelContent(() => {
@@ -80,11 +79,14 @@ onMounted(() => {
 })
 
 // Mettre à jour l'éditeur quand la valeur change
-watch(() => props.modelValue, (newValue) => {
-  if (editor && cleanSourceCode(newValue) !== editor.getValue()) {
-    editor.setValue(cleanSourceCode(newValue))
-  }
-})
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    if (editor && cleanSourceCode(newValue) !== editor.getValue()) {
+      editor.setValue(cleanSourceCode(newValue))
+    }
+  },
+)
 
 onBeforeUnmount(() => {
   if (editor) {

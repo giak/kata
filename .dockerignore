@@ -1,0 +1,36 @@
+# Dépendances
+node_modules
+.pnpm-store
+
+# Fichiers de build
+dist
+coverage
+
+# Fichiers de développement
+.git
+.gitignore
+.env
+.env.*
+*.log
+.DS_Store
+.editorconfig
+.eslintrc*
+.prettierrc*
+.husky
+.vscode
+README.md
+*.md
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Tests
+__tests__
+test
+tests
+*.test.ts
+*.spec.ts 
+
+# Prompts
+Focus.md
+.cursorrules

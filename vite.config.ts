@@ -6,33 +6,23 @@ import vueDevtools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevtools(),
-  ],
+  plugins: [vue(), vueDevtools()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
   server: {
-    fs: {
-      // Permettre l'accès aux fichiers nécessaires
-      allow: [
-        // Permettre l'accès au répertoire du projet
-        '.',
-        // Permettre l'accès aux katas
-        'src/katas/implementations',
-        // Permettre l'accès aux node_modules
-        'node_modules',
-      ],
-      strict: false
-    }
+    host: true, // Écoute sur toutes les interfaces réseau
+    port: 5173,
+    watch: {
+      usePolling: true, // Nécessaire pour le hot reload dans Docker
+    },
   },
   optimizeDeps: {
     include: [
       'monaco-editor/esm/vs/editor/editor.worker',
-      'monaco-editor/esm/vs/language/typescript/ts.worker'
-    ]
-  }
+      'monaco-editor/esm/vs/language/typescript/ts.worker',
+    ],
+  },
 })
